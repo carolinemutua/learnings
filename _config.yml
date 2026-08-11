@@ -1,0 +1,22 @@
+title: Learnings
+description: Self-study kits and learning notes, diagram-led.
+remote_theme: just-the-docs/just-the-docs
+
+# Mermaid diagram support (rendered client-side by just-the-docs)
+mermaid:
+  version: "10.9.0"
+
+# Navigation and search
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "View on GitHub":
+    - "https://github.com/carolinemutua/learnings"
+
+color_scheme: dark
+
+# Exclude source-control and tooling files from the built site
+exclude:
+  - README.md
+  - .gitignore
