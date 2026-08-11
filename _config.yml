@@ -16,6 +16,9 @@ aux_links:
 
 color_scheme: dark
 
+# Clean URLs with trailing slash (so /plan/ resolves, matching in-page links)
+permalink: pretty
+
 # Exclude source-control and tooling files from the built site
 exclude:
   - README.md
