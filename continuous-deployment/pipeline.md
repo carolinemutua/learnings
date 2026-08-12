@@ -188,6 +188,41 @@ mindmap
       Rotating a key changes nothing in code
 ```
 
+## Render is one choice among several
+
+Render is the host used in this pipeline, but the same pattern (a GitHub Actions workflow that triggers a deploy on merge) works with many hosting platforms. They differ in how much they manage for the developer, how they price, and what kinds of applications they suit. The table below compares Render with the platforms most often mentioned alongside it.
+
+| Platform | Model | Free tier | Best suited for | Notable trait |
+| --- | --- | --- | --- | --- |
+| Render | Managed platform (PaaS) | Yes, spins down when idle | Web services, static sites, background workers, databases | Blueprint file (`render.yaml`) describes the whole service in the repo |
+| Heroku | Managed platform (PaaS), the original of this category | No longer free | Quick-to-ship web apps with a large add-on marketplace | Buildpacks and `Procfile`; long-established, now paid only |
+| Railway | Managed platform (PaaS) | Trial credit, then usage-based | Fast prototypes, databases wired up with little config | Very low setup friction, priced by usage |
+| Fly.io | Runs containers close to users at the edge | Small always-on allowance | Latency-sensitive apps that benefit from many regions | Deploys the app to multiple regions near users |
+| Vercel | Frontend and serverless platform | Generous for hobby use | React, Next.js, and other frontend frameworks | Preview deployment for every pull request |
+| Netlify | Frontend and static-site platform | Generous for hobby use | Static sites and JAMstack frontends with serverless functions | Deploy previews and built-in forms and redirects |
+| AWS (App Runner, Elastic Beanstalk) | Cloud provider building blocks | Limited free tier | Teams already on AWS needing fine control | Most powerful and most configuration; steepest to learn |
+
+A rough way to place them:
+
+```mermaid
+mindmap
+  root((Where they sit))
+    Least setup, most managed
+      Railway
+      Render
+      Heroku
+    Frontend focused
+      Vercel
+      Netlify
+    Edge and regions
+      Fly.io
+    Most control, most work
+      AWS App Runner
+      AWS Elastic Beanstalk
+```
+
+The choice is a trade between convenience and control. Managed platforms like Render, Heroku, and Railway remove almost all infrastructure work and suit a solo builder or a small service. Frontend platforms like Vercel and Netlify are shaped around static sites and JavaScript frameworks. A full cloud provider such as AWS offers the most control and the most configuration, which is worth it for a team that needs it and overkill for a first deployment. The important point is that the pipeline pattern in this kit does not change: whichever host is chosen, the workflow still runs on merge and still triggers the deploy.
+
 ## Why record deployments at all
 
 The deploy workflow could have been three lines: check out, curl the hook, done. It is longer on purpose, because it records each deployment as a tracked event with a success or failure status. That record turns delivery into something measurable: how often deployments happen, and how often they fail. Those are two of the widely used DORA delivery metrics, and they are only possible because each deployment leaves a trace instead of being an untracked side effect of a merge.
