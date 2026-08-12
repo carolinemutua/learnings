@@ -1,2 +1,44 @@
 <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
 <link rel="alternate icon" href="{{ '/favicon.svg' | relative_url }}">
+
+<script>
+  // Sidebar collapse toggle: hides the navigation for more reading width.
+  // The choice is remembered between visits via localStorage.
+  (function () {
+    var KEY = "learnings-nav-collapsed";
+
+    function apply(collapsed) {
+      document.body.classList.toggle("nav-collapsed", collapsed);
+      var btn = document.getElementById("nav-toggle");
+      if (btn) {
+        btn.setAttribute("aria-pressed", String(collapsed));
+        btn.title = collapsed ? "Show menu" : "Hide menu";
+      }
+    }
+
+    function build() {
+      var btn = document.createElement("button");
+      btn.id = "nav-toggle";
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Toggle navigation menu");
+      btn.innerHTML = "<span class='nav-toggle-icon'></span>";
+      btn.addEventListener("click", function () {
+        var collapsed = !document.body.classList.contains("nav-collapsed");
+        try { localStorage.setItem(KEY, collapsed ? "1" : "0"); } catch (e) {}
+        apply(collapsed);
+      });
+      document.body.appendChild(btn);
+
+      var stored = "0";
+      try { stored = localStorage.getItem(KEY) || "0"; } catch (e) {}
+      apply(stored === "1");
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", build);
+    } else {
+      build();
+    }
+  })();
+</script>
+
