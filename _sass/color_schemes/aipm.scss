@@ -1,0 +1,23 @@
+// Custom color scheme for the Learnings site.
+// Palette matches the PM & AI Learning Hub: a deep navy background with a
+// blue-to-violet accent, so the two sites read as the same family.
+
+$color-scheme: dark;
+
+// Core surfaces
+$body-background-color: #0b1220;
+$sidebar-color: #111a2e;
+$search-background-color: #0c1424;
+$table-background-color: #111a2e;
+$code-background-color: #0c1424;
+
+// Text
+$body-text-color: #eaf0fc;
+$body-heading-color: #ffffff;
+$nav-child-link-color: #93a0bd;
+$search-result-preview-color: #93a0bd;
+
+// Accent and structure
+$link-color: #4c8dff;
+$btn-primary-color: #4c8dff;
+$border-color: #243149;

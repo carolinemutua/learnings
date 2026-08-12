@@ -1,0 +1,63 @@
+// Polish layer that brings in the PM & AI Learning Hub's signature touches:
+// a blue-to-violet gradient on the wordmark and headings, an accent bar on the
+// active navigation item, and softly rounded panels for tables and code.
+
+$accent-1: #4c8dff;
+$accent-2: #7c5cff;
+
+// Wordmark: gradient fill, matching the hub's logo treatment.
+.site-title.lh-tight,
+.site-title {
+  font-weight: 700;
+  background: linear-gradient(90deg, $accent-1, $accent-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Page H1: a short gradient underline instead of a flat rule.
+.main-content h1:first-of-type {
+  padding-bottom: 0.3em;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, $accent-1, $accent-2) 1;
+}
+
+// Active navigation item: accent bar on the left, subtle raised panel.
+.nav-list .nav-list-item .nav-list-link.active {
+  background-image: linear-gradient(90deg, rgba(76, 141, 255, 0.16), transparent);
+  border-left: 3px solid $accent-1;
+}
+
+// Tables read as cards: rounded, bordered, gradient-tinted header row.
+.main-content {
+  table {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #243149;
+  }
+
+  thead th {
+    background: linear-gradient(90deg, rgba(76, 141, 255, 0.14), rgba(124, 92, 255, 0.14));
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
+
+// Search box and code blocks: match the hub's rounded, inset panels.
+.search-input {
+  border-radius: 8px;
+}
+
+.main-content {
+  pre.highlight,
+  figure.highlight {
+    border-radius: 10px;
+    border: 1px solid #243149;
+  }
+}
+
+// Buttons and links pick up the accent on hover for a cohesive feel.
+.btn-primary {
+  background: linear-gradient(90deg, $accent-1, $accent-2);
+  border: 0;
+}
