@@ -2,8 +2,10 @@
 <link rel="alternate icon" href="{{ '/favicon.svg' | relative_url }}">
 
 <script>
-  // Sidebar collapse toggle: hides the navigation for more reading width.
-  // The choice is remembered between visits via localStorage.
+  /* Sidebar collapse toggle: hides the navigation for more reading width.
+     The choice is remembered between visits via localStorage. Block comments
+     only, and semicolons throughout, so the script survives HTML minification
+     that strips newlines. */
   (function () {
     var KEY = "learnings-nav-collapsed";
 
