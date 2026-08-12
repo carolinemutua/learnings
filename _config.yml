@@ -14,7 +14,7 @@ aux_links:
   "View on GitHub":
     - "https://github.com/carolinemutua/learnings"
 
-color_scheme: dark
+color_scheme: aipm
 
 # Clean URLs with trailing slash (so /plan/ resolves, matching in-page links)
 permalink: pretty
