@@ -145,3 +145,81 @@ $accent-2: #7c5cff;
 *::-webkit-scrollbar-thumb:hover {
   background: $accent-1;
 }
+
+// --- Sidebar: reclaim the blank strip and add a collapse toggle ---
+
+// The theme pins nav text to the right of a wide sidebar, leaving a blank
+// strip on the left. Letting the header and nav fill the sidebar removes it.
+.side-bar {
+  align-items: stretch;
+}
+
+.site-header,
+.site-nav {
+  width: 100%;
+}
+
+// Floating toggle that hides or shows the whole sidebar for more reading width.
+#nav-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #243149;
+  background: #13233f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  &:hover {
+    border-color: $accent-1;
+  }
+}
+
+.nav-toggle-icon {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: #eaf0fc;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 2px;
+    background: #eaf0fc;
+  }
+
+  &::before {
+    top: -5px;
+  }
+
+  &::after {
+    top: 5px;
+  }
+}
+
+// Collapsed state: sidebar out of flow, content spans the full width.
+body.nav-collapsed .side-bar {
+  display: none;
+}
+
+body.nav-collapsed .main {
+  margin-left: 0 !important;
+  max-width: none;
+}
+
+// On narrow screens the theme provides its own menu, so hide this toggle.
+@media (max-width: 50rem) {
+  #nav-toggle {
+    display: none;
+  }
+}
