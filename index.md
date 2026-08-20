@@ -12,7 +12,7 @@ A collection of self-study kits and learning notes, built diagram-first so conce
 
 | Kit | Goal | Status |
 | --- | --- | --- |
-| [GH-600: Agentic AI Developer]({{ site.baseurl }}/gh-600-agentic-ai-developer/) | Pass the GitHub Certified: Agentic AI Developer exam in a two-week sprint | Active |
+| [GH-600: Agentic AI Developer]({{ site.baseurl }}/gh-600-agentic-ai-developer/) | Pass the GitHub Certified: Agentic AI Developer exam in a six-day sprint | Active |
 | [Git, GitHub & CI]({{ site.baseurl }}/git-github-ci/) | Understand version control, pull requests, and CI workflows, and drive them from both the command line and the web interface | Active |
 | [Continuous Deployment (CD)]({{ site.baseurl }}/continuous-deployment/) | See how a merge becomes a live deployment, using a real GitHub Actions and Render pipeline | Active |
 
