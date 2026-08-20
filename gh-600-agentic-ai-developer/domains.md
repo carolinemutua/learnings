@@ -7,7 +7,7 @@ nav_order: 2
 
 # Domain deep-dives
 
-Each of the six domains is summarised below with the skills the study guide lists and a diagram that shows the flow. The weighting shows how many scored questions to expect, and therefore how much attention each domain earns in the two-week plan.
+Each of the six domains is summarised below with the skills the study guide lists and a diagram that shows the flow. The weighting shows how many scored questions to expect, and therefore how much attention each domain earns in the sprint plan.
 
 ---
 

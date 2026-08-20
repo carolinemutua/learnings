@@ -7,7 +7,7 @@ has_children: true
 
 # GH-600: GitHub Certified Agentic AI Developer
 
-A two-week, practice-first study kit for Exam GH-600, the exam behind the GitHub Certified: Agentic AI Developer credential. The kit is built for someone who already works with coding agents, custom instructions, MCP servers, and Copilot setup steps, and who wants to convert that hands-on experience into a passing score quickly.
+A practice-first study kit for Exam GH-600, the exam behind the GitHub Certified: Agentic AI Developer credential. The kit is built for someone who already works with coding agents, custom instructions, MCP servers, and Copilot setup steps, and who wants to convert that hands-on experience into a passing score quickly.
 
 ## Exam facts at a glance
 
@@ -26,7 +26,7 @@ A two-week, practice-first study kit for Exam GH-600, the exam behind the GitHub
 
 ## What the exam measures
 
-The exam is split into six domains. The percentages are the share of scored questions, which drives how the two-week plan allocates time.
+The exam is split into six domains. The percentages are the share of scored questions, which drives how the sprint plan allocates time.
 
 ```mermaid
 pie showData
@@ -60,6 +60,6 @@ Read the plan next, then work through the domain deep-dives.
 
 | Page | Purpose |
 | --- | --- |
-| [Two-week plan]({{ site.baseurl }}/gh-600-agentic-ai-developer/plan/) | Day-by-day sprint, weighted to the scored domains |
+| [Six-day sprint plan]({{ site.baseurl }}/gh-600-agentic-ai-developer/plan/) | Day-by-day sprint, weighted to the scored domains |
 | [Domain deep-dives]({{ site.baseurl }}/gh-600-agentic-ai-developer/domains/) | Each of the six domains explained with a diagram and the key skills |
 | [Resources]({{ site.baseurl }}/gh-600-agentic-ai-developer/resources/) | Official study guide, training modules, and supporting documentation |

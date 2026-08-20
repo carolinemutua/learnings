@@ -10,7 +10,7 @@ https://carolinemutua.github.io/learnings/
 
 | Kit | Goal |
 | --- | --- |
-| `gh-600-agentic-ai-developer/` | Two-week study kit for GitHub Certified: Agentic AI Developer (Exam GH-600) |
+| `gh-600-agentic-ai-developer/` | Study kit for GitHub Certified: Agentic AI Developer (Exam GH-600) |
 
 ## Structure
 

@@ -1,70 +1,102 @@
 ---
-title: Two-week plan
+title: Six-day sprint plan
 layout: default
 parent: GH-600 Agentic AI Developer
 nav_order: 1
 ---
 
-# Two-week sprint plan
+# Six-day sprint plan
 
-Fourteen days, front-loaded onto the two heaviest-scored areas (tool use and the evaluation and coordination cluster), with the final three days reserved for mock exams and remediation. Each day assumes roughly two to three focused hours. Where a task can be built rather than read, the plan says build it.
+A compressed plan for the run-up to an exam sitting on Thursday 27 August 2026,
+covering the six and a half days from Thursday 20 August. It replaces the earlier
+fourteen-day shape, which remains in the repository history for anyone working to
+a longer runway.
+
+The sequencing rule is simple: hours follow exam weight, and the heaviest domain
+gets the largest uninterrupted block. Roughly thirty hours are available across
+the window, which is sufficient provided the weekend and the final clear weekday
+are protected.
 
 ## How the sprint is shaped
 
 ```mermaid
 gantt
-    title GH-600 two-week sprint
+    title GH-600 six-day sprint
     dateFormat YYYY-MM-DD
-    axisFormat Day %d
+    axisFormat %a %d
     section Foundations
-    Orientation and lifecycle        :d1, 2026-01-01, 1d
-    section Domain 1 and 2 (core build)
-    Architecture and SDLC            :d2, after d1, 2d
-    Tool use, MCP, environment       :d3, after d2, 3d
-    Week-1 review and quiz           :d4, after d3, 1d
-    section Domain 3-6 (operate and govern)
-    Memory, state, execution         :d5, after d4, 1d
-    Evaluation and tuning            :d6, after d5, 1d
-    Multi-agent coordination         :d7, after d6, 1d
-    Guardrails and accountability    :d8, after d7, 1d
+    Orientation and Domain 1         :d1, 2026-08-20, 2d
+    section Heaviest domains
+    Domain 2 tool use and MCP        :d2, 2026-08-22, 1d
+    Domain 2 environment, Domain 5   :d3, 2026-08-23, 1d
+    section Remaining domains
+    Domain 4 evaluation              :d4, 2026-08-24, 1d
+    Domains 3 and 6                  :d5, 2026-08-25, 1d
     section Exam readiness
-    Full mock and review             :d9, after d8, 1d
-    Targeted remediation and sandbox :d10, after d9, 1d
-    Light review and logistics       :d11, after d10, 1d
+    Mock, diagnosis, remediation     :d6, 2026-08-26, 1d
+    Exam                             :milestone, 2026-08-27, 0d
 ```
 
-## Week one: build the mental model and the core skills
+## Where the hours go
 
-| Day | Focus | Do this | Anchor to existing work |
+Time is allocated against the published domain weights rather than spread evenly.
+Domain 2 carries the largest share of scored questions and receives roughly twelve
+of the thirty available hours.
+
+| Domain | Weight | Hours | Rationale |
 | --- | --- | --- | --- |
-| 1 | Orientation and the agent lifecycle | Read the exam page and study guide end to end. Complete the *Foundations of Agentic AI in GitHub* module. Write the plan, act, evaluate loop from memory. Launch the exam sandbox to see the question interface. | The plan-act-evaluate loop is the same loop a custom agent already runs; name each phase against an agent that has been built before. |
-| 2 | Domain 1: architecture and SDLC (part 1) | Study how agents integrate into the SDLC: defining inputs, outputs, and success criteria, and separating planning from execution. Practise writing a structured, inspectable plan an agent must output before acting. | Compare to writing a custom agent brief: goal, boundaries, and a plan gate before any file change. |
-| 3 | Domain 1: architecture and SDLC (part 2) | Study observability and control for autonomous agents: autonomy levels, inspectable artifacts, and human intervention that does not slow delivery. Configure one agent to produce an inspectable artifact (a plan file or PR description) before it acts. | Map directly to copilot setup steps and custom instructions that force a plan before execution. |
-| 4 | Domain 2: tool use (part 1) | Study selecting and configuring agent tools and, critically, tool permissions. List the tools an agent needs for a real task and scope each permission to least privilege. | Reuse a real skill or agent already built; write its tool and permission list as an exam-style answer. |
-| 5 | Domain 2: MCP servers (part 2) | Study configuring MCP servers: adding an MCP server as a tool, configuring a GitHub remote MCP server, MCP registries, and allow lists. Build or configure one MCP server and attach it to an agent. | This is the strongest existing area; treat it as a review-and-formalise day rather than new learning. |
-| 6 | Domain 2: environment and safe execution (part 3) | Study integrating agents into dev environments (repository scope, branch-based scope, CI invocation, autonomous branch and pull request creation) and safe execution paths: error handling, retries, rollbacks, escalation, traceability. | Connect to branch-scoped, PR-based agent workflows already in use; write the rollback and escalation path for one. |
-| 7 | Consolidation | Re-draw the lifecycle diagram from memory with domains 1 and 2 annotated. Take a short self-quiz on domains 1 and 2. List every weak point for the week-two remediation day. | None; this is a synthesis day. |
+| 2. Tool use and environment interaction | 20-25% | 12 | Heaviest scored domain, and the one closest to daily MCP and custom-agent practice |
+| 5. Multi-agent coordination | 15-20% | 3 | Shares vocabulary with Domain 2, so it follows immediately |
+| 4. Evaluation, error analysis, tuning | 15-20% | 3 | Conceptually closest to product measurement instincts |
+| 1. Architecture and SDLC processes | 15-20% | 3 | Foundation for every other domain, so it comes early |
+| 3. Memory, state, and execution | 10-15% | 1 | Lightest weight |
+| 6. Guardrails and accountability | 10-15% | 1 | Lightest weight |
+| Mock, diagnosis, remediation | n/a | 7 | The highest-value single block in the plan |
 
-## Week two: operate, govern, and get exam-ready
+## The daily schedule
 
-| Day | Focus | Do this | Anchor to existing work |
+| Day | Hours | Focus | Output that closes the day |
 | --- | --- | --- | --- |
-| 8 | Domain 3: memory, state, execution | Study short-term, long-term, and external memory; scoping memory to task-relevant information; expiration, pruning, and reset; persisting state as durable artifacts; detecting and correcting context drift. | Map to how a session or agent persists decisions as artifacts and resumes without repeating steps. |
-| 9 | Domain 4: evaluation, error analysis, tuning | Study defining success criteria and evaluation signals, automated scanning tools, classifying root causes (reasoning errors, tool misuse, context or environment issues), and tuning instructions, memory, and tool access from results. | Map to a quality-scoring or evaluation habit already practised; frame it as evaluation signals. |
-| 10 | Domain 5: multi-agent coordination | Study orchestration patterns, agent isolation for parallel execution, conflict detection (overlapping edits, duplicated effort, contradictory outputs), multi-agent observability and audit artifacts, and lifecycle management of agents in a workflow. | Map to orchestrator-and-subagent patterns; sketch a hub-and-spoke workflow for a real task. |
-| 11 | Domain 6: guardrails and accountability | Study autonomy levels tied to risk, human-in-the-loop for high-judgment actions, blocking policy-violating actions, least-privilege scoping, and requiring explicit authorisation for irreversible changes. | Map to guardrail and permission patterns already used in agent configs. |
-| 12 | Full mock exam | Sit a full-length, timed practice run under exam conditions. Score it, then bucket every miss by domain. Do not re-study yet; just diagnose. | None; this is a measurement day. |
-| 13 | Targeted remediation | Re-study only the two lowest-scoring domains from day 12. Re-take the sandbox and any interactive question types. Re-draw the weakest domain diagram from memory. | None; remediation is driven by the mock result. |
-| 14 | Light review and logistics | Skim all six domain summaries once. Confirm the personal MSA scheduling, legal name on the Learn profile, ID, and the online proctoring system pre-check. Rest. | None; readiness and logistics only. |
+| Thu 20 Aug, evening | 3 | Module *Foundations of Agentic AI in GitHub*. Read the study guide end to end. Launch the exam sandbox to see the question interface | The plan, act, evaluate loop drawn from memory |
+| Fri 21 Aug | 2 | Domain 1 in full. Module *Designing Agent Architecture and SDLC Integration* | Every Domain 1 practice question answered |
+| Sat 22 Aug | 6 | Domain 2, part one. Module *Tooling, MCP, and Agent Execution Environments*. Tool selection, tool permissions, MCP servers, registries, allow lists | One MCP server configured and attached to an agent |
+| Sun 23 Aug | 6 | Domain 2, part two: repository and branch scope, CI invocation, autonomous branch and pull request creation, retries, rollback, escalation, traceability. Then Domain 5 | Domain 2 and Domain 5 practice questions answered |
+| Mon 24 Aug, morning | 3 | Domain 4: success criteria, evaluation signals, automated scanning, and root-cause classification across reasoning errors, tool misuse, and context or environment issues | Domain 4 practice questions answered |
+| Tue 25 Aug | 2 | Domain 3 memory and state, then Domain 6 guardrails and autonomy levels | Domain 3 and Domain 6 practice questions answered |
+| Wed 26 Aug | Full day | Timed mock under exam conditions in the morning. Score it and bucket every miss by domain. Remediate only the two weakest domains in the afternoon. Re-run the sandbox | A scored mock and two remediated domains |
+| Thu 27 Aug | Exam | Identity document ready and matching the Learn profile legal name. Online proctoring pre-check completed on the actual machine and network | |
 
-## Daily rhythm that keeps the sprint honest
+## Three rules that matter more than the schedule
+
+1. **Domain 2 is formalisation, not new learning.** MCP servers, custom agents,
+   custom instructions, and setup steps are existing daily practice. The work on
+   Saturday and Sunday is attaching exam vocabulary to familiar mechanics, which
+   is faster than learning from cold.
+2. **The Wednesday mock is not optional.** With six days there is no room to
+   discover a weak domain during the exam itself. Diagnose first, remediate
+   second, and resist re-studying before the mock is scored.
+3. **No session ends on reading alone.** Each objective closes with something
+   built, drawn, or answered, because the exam assesses operating and governing
+   agents rather than reciting definitions.
+
+## Daily rhythm
 
 ```mermaid
 flowchart LR
     R["Read the objective<br/>from the study guide"] --> B["Build or configure<br/>one concrete thing"]
     B --> E["Explain it back<br/>in one diagram or paragraph"]
-    E --> Q["Answer 5 self-test<br/>questions on it"]
-    Q --> L["Log weak points<br/>for the mock and remediation"]
+    E --> Q["Answer the domain's<br/>practice questions"]
+    Q --> L["Log weak points for<br/>the Wednesday mock"]
 ```
 
-The rule for the whole sprint: never finish a day on reading alone. Each domain objective should end in something built, drawn, or answered, because the exam rewards operating and governing agents, not reciting definitions.
+## Contingency if a day is lost
+
+Should a scheduled block be lost, protect the order below and drop from the
+bottom. The mock survives in every scenario, because an unmeasured gap is more
+dangerous than an unstudied light domain.
+
+1. Wednesday mock and remediation
+2. Domain 2, both days
+3. Domain 1
+4. Domain 4 and Domain 5
+5. Domain 3 and Domain 6
